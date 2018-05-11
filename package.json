@@ -1,6 +1,6 @@
 {
   "name": "news-letter-subscription",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "subscribe by email to news letter",
   "main": "index.js",
   "scripts": {
@@ -9,8 +9,12 @@
     "web":
       "start npm run css && start npm run js && start live-server --watch=./*.html,./build/style.css,./build/main.js",
     "dev": "parcel index.html --open",
+    "test": "mocha src/test/index.test.js -w",
     "prod": "parcel build index.html -d build --public-url ./",
-    "deploy": "firebase deploy"
+    "commit": "git-cz",
+    "deploy": "firebase deploy",
+    "travis-deploy-once": "travis-deploy-once",
+    "semantic-release": "semantic-release"
   },
   "keywords": ["random", "subcribe", "news-letter", "info tech"],
   "author": "Mustafa Alroomi",
@@ -20,12 +24,21 @@
     "autoprefixer": "^7.2.5",
     "babel-core": "6.26.3",
     "babel-preset-env": "^1.6.1",
+    "chai": "4.1.2",
+    "commitizen": "2.9.6",
+    "cz-conventional-changelog": "2.1.0",
+    "mocha": "5.1.1",
     "node-sass": "^4.7.2",
-    "postcss-modules": "^1.1.0"
+    "postcss-modules": "^1.1.0",
+    "semantic-release": "^15.4.1",
+    "travis-deploy-once": "^5.0.0"
+  },
+  "czConfig": {
+    "path": "node_modules/cz-conventional-changelog"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/musti-91/news-letters-subscription.git"
+    "url": "https://github.com/musti-91/news-letters-subscription.git"
   },
   "bugs": {
     "url": "https://github.com/musti-91/news-letters-subscription/issues"
