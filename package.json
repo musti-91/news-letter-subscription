@@ -14,6 +14,7 @@
     "prod": "parcel build index.html -d build --public-url ./",
     "commit": "git-cz",
     "deploy": "firebase deploy",
+    "travis-deploy-once": "travis-deploy-once",
     "semantic-release": "semantic-release"
   },
   "keywords": ["random", "subcribe", "news-letter", "info tech"],
