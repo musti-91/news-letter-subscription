@@ -45,5 +45,6 @@ LATER ON
 -- semantic-release-cli setup ==> follow instructions:: choose travis.cli
 -- "semantic-release": "semantic-release pre && npm publish && semantic-release post"
 10-add commitizen , cz-conventional-chnagelog
-   create script: commit: git-cz
+   create script: commit: git-cz ==> follow instructions
+11- add test single
         

@@ -4,9 +4,6 @@ cache:
     - node_modules
 notifications:
   email: false
-addons: 
-  apt: 
-   update: true  
 node_js:
   - iojs
 before_install:
@@ -14,9 +11,6 @@ before_install:
 before_script:
   - npm prune
 script: 
-  - npm run test  
+  - npm run test:single  
 after_success:
-  - npm run travis-deploy-once "npm run semantic-release"
-branches:
-  except:
-    - /^v\d+\.\d+\.\d+$/
+  - npm run semantic-release

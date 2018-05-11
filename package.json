@@ -10,10 +10,10 @@
       "start npm run css && start npm run js && start live-server --watch=./*.html,./build/style.css,./build/main.js",
     "dev": "parcel index.html --open",
     "test": "mocha src/test/index.test.js -w",
+    "test:single": "mocha src/test/index.test.js",
     "prod": "parcel build index.html -d build --public-url ./",
     "commit": "git-cz",
     "deploy": "firebase deploy",
-    "travis-deploy-once": "travis-deploy-once",
     "semantic-release": "semantic-release"
   },
   "keywords": ["random", "subcribe", "news-letter", "info tech"],
