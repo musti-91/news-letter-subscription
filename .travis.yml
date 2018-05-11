@@ -4,6 +4,9 @@ cache:
     - node_modules
 notifications:
   email: false
+addons: 
+  apt: 
+   update: true  
 node_js:
   - iojs
 before_install:
