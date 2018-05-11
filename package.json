@@ -1,0 +1,34 @@
+{
+  "name": "news-letter-subscription",
+  "version": "1.0.0",
+  "description": "subscribe by email to news letter",
+  "main": "index.js",
+  "scripts": {
+    "css": "parcel watch css/style.css -d build --public-url ./",
+    "js": "parcel watch src/index.js -d build --public-url ./",
+    "web":
+      "start npm run css && start npm run js && start live-server --watch=./*.html,./build/style.css,./build/main.js",
+    "dev": "parcel index.html --open",
+    "prod": "parcel build index.html -d build --public-url ./",
+    "deploy": "firebase deploy"
+  },
+  "keywords": ["random", "subcribe", "news-letter", "info tech"],
+  "author": "Mustafa Alroomi",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^7.2.5",
+    "babel-core": "6.26.3",
+    "babel-preset-env": "^1.6.1",
+    "node-sass": "^4.7.2",
+    "postcss-modules": "^1.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/musti-91/news-letters-subscription.git"
+  },
+  "bugs": {
+    "url": "https://github.com/musti-91/news-letters-subscription/issues"
+  },
+  "homepage": "https://github.com/musti-91/news-letters-subscription#readme"
+}
