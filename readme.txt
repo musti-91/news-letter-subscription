@@ -57,5 +57,7 @@ LATER ON
     add to yml       
 14- add codecov
     npm i -D codecov.io
-    
+** close git commit by
+   :wq    
+
         
