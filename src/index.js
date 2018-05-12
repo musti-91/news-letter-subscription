@@ -9,3 +9,6 @@ function getRandom(array) {
     return element;
   });
 }
+function con() {
+  console.log("coverage");
+}

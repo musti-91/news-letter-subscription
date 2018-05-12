@@ -8,11 +8,15 @@ node_js:
   - iojs
 before_install:
   - npm i -g npm@^2.0.0
+install: 
+  - npm install -g codecov  
 before_script:
   - npm prune
 script: 
   - npm run test:single  
+  - npm run check-coverage
 after_success:
+  - npm run report-coverage
   - npm run travis-deploy-once "npm run semantic-release"
 branches:
   except:

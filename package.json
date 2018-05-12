@@ -10,8 +10,12 @@
       "start npm run css && start npm run js && start live-server --watch=./*.html,./build/style.css,./build/main.js",
     "dev": "parcel index.html --open",
     "test": "mocha src/test/index.test.js -w",
-    "test:single": "mocha src/test/index.test.js",
+    "test:single": "nyc mocha src/test/index.test.js",
+    "check-coverage":
+      "nyc check-coverage --lines 50 --functions 50 --branches 50",
     "prod": "parcel build index.html -d build --public-url ./",
+    "report-coverage":
+      "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "commit": "git-cz",
     "deploy": "firebase deploy",
     "travis-deploy-once": "travis-deploy-once",
@@ -26,18 +30,20 @@
     "babel-core": "6.26.3",
     "babel-preset-env": "^1.6.1",
     "chai": "4.1.2",
+    "codecov.io": "0.1.6",
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.1.0",
     "ghooks": "2.0.4",
     "mocha": "5.1.1",
     "node-sass": "^4.7.2",
+    "nyc": "11.7.3",
     "postcss-modules": "^1.1.0",
     "semantic-release": "^15.4.1",
     "travis-deploy-once": "^5.0.0"
   },
   "config": {
     "ghooks": {
-      "pre-commit": "npm run test:single"
+      "pre-commit": "npm run test:single && npm run check-coverage"
     },
     "czConfig": {
       "path": "node_modules/cz-conventional-changelog"

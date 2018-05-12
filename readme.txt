@@ -49,4 +49,13 @@ LATER ON
 11- add test single== test:single: mocha src/test.js
     add test:single to travis.yml   
 12- add ghooks to check before pushing to github
-    npm i -D ghooks         
+    npm i -D ghooks   
+13- add nyc for coverage code 
+    npm i -D nyc  
+    config nyc in pck.json by: 
+    nyc mocha src/index.test.js  
+    add to yml       
+14- add codecov
+    npm i -D codecov.io
+    
+        
