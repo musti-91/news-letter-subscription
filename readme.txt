@@ -46,5 +46,7 @@ LATER ON
 -- "semantic-release": "semantic-release pre && npm publish && semantic-release post"
 10-add commitizen , cz-conventional-chnagelog
    create script: commit: git-cz ==> follow instructions
-11- add test single
-        
+11- add test single== test:single: mocha src/test.js
+    add test:single to travis.yml   
+12- add ghooks to check before pushing to github
+    npm i -D ghooks         

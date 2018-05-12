@@ -1,6 +1,6 @@
 {
   "name": "news-letter-subscription",
-  "version": "0.0.0-development",
+  "version": "0.0.0-semantically-released",
   "description": "subscribe by email to news letter",
   "main": "index.js",
   "scripts": {
@@ -28,14 +28,20 @@
     "chai": "4.1.2",
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.1.0",
+    "ghooks": "2.0.4",
     "mocha": "5.1.1",
     "node-sass": "^4.7.2",
     "postcss-modules": "^1.1.0",
     "semantic-release": "^15.4.1",
     "travis-deploy-once": "^5.0.0"
   },
-  "czConfig": {
-    "path": "node_modules/cz-conventional-changelog"
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run test:single"
+    },
+    "czConfig": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
   },
   "repository": {
     "type": "git",
