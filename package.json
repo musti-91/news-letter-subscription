@@ -49,9 +49,7 @@
     "travis-deploy-once": "^5.0.0"
   },
   "config": {
-    "ghooks": {
-      "pre-commit": "npm run check-coverage"
-    },
+    "ghooks": {},
     "czConfig": {
       "path": "node_modules/cz-conventional-changelog"
     }
