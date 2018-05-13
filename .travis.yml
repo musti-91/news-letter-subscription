@@ -1,7 +1,7 @@
 language: node_js
 cache:
   directories:
-    - ~/.npm
+    - node_modules
 notifications:
   email: false
 node_js:
@@ -13,7 +13,7 @@ install:
 before_script:
   - npm prune
 script: 
-  - npm run test:single 
+  - npm run test:single
   - codecov
 after_success:
   - npm run report-coverage
