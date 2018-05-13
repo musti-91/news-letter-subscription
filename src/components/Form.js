@@ -8,6 +8,7 @@ export default class Form {
     this.input_field = "";
     this.form = "";
     this.error_text = "";
+    this.button = "";
     this.createForm();
     this.events();
   }
@@ -17,7 +18,7 @@ export default class Form {
         <p></p>
         <input type="text" name="email" id="in_email" required placeholder="Your e-mail address" autocomplete="off">
       </div>
-      <button> Sign up</button>
+      <button class="animated zoomIn"> Sign up</button>
       <p class="error_text" id="error_text"></p>
     </form>
     `;
@@ -26,36 +27,46 @@ export default class Form {
     this.input_field = document.getElementById("in_email");
     this.input_field.focus();
     this.error_text = document.getElementById("error_text");
+    this.button = document.querySelector("button");
+    this.form = this.holder.querySelector("form");
   }
   events() {
-    this.form = this.holder.querySelector("form");
     this.form.addEventListener("submit", this.handleForm.bind(this));
     this.input_field.addEventListener("input", () => {
-      this.form.classList.remove("error");
-      this.holder.style.height = "70px";
-      this.error_text.classList.remove("showError");
+      this.removeError();
     });
   }
+
   handleForm(e) {
     e.preventDefault();
+    this.button.style.display = "none";
+    this.input_field.parentElement.style.width = "100%";
     if (this.validate(this.input_field.value)) {
       if (this.inArray(this.input_field.value, this.emails)) {
         this.showError(this.error_text, "email is already exised");
       } else {
-        this.firebaseRef.push(this.input_field.value);
-        this.input_field.value = "";
-        this.form.style.display = "none";
-        this.holder.classList.add("success");
-        setTimeout(() => {
-          this.holder.classList.remove("success");
-          this.form.style.display = "flex";
-        }, 1700);
-        console.log("email had been sent");
+        this.email_successed();
       }
     } else {
       this.showError(this.error_text, "insert a valid email");
-      document.querySelector("button").classList.add("animated");
     }
+  }
+  email_successed() {
+    this.firebaseRef.push(this.input_field.value);
+    this.input_field.value = "";
+    this.form.style.display = "none";
+    this.holder.classList.add("success");
+    setTimeout(() => {
+      this.holder.classList.remove("success");
+      this.form.style.display = "flex";
+    }, 1700);
+  }
+  removeError() {
+    this.button.style.display = "block";
+    this.input_field.parentElement.style.width = "75%";
+    this.form.classList.remove("error");
+    this.holder.style.height = "70px";
+    this.error_text.classList.remove("showError");
   }
   validate(value) {
     if (meraki.api.validate.email(value)) {
@@ -75,10 +86,13 @@ export default class Form {
   showError(errorTextHolder, errMsg) {
     errorTextHolder.innerHTML = errMsg;
     errorTextHolder.classList.add("showError");
+
     if (errorTextHolder.classList.contains("showError")) {
       this.holder.style.height = "100px";
+      this.form.classList.add("error");
     } else {
       this.holder.style.height = "70px";
+      this.form.classList.remove("error");
     }
   }
 }

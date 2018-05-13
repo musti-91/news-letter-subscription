@@ -1,10 +1,9 @@
+// var assert = require("assert");
 // var arr = require("../index");
-// var expect = require("chai").expect;
-
-// describe("index", function() {
-//   describe("get arr", function() {
-//     it("should return all items in array", function() {
-//       expect(true).to.be.true;
+// describe("Array", function() {
+//   describe("#indexOf", function() {
+//     it("should return -1", function() {
+//       assert.equal([1, 2, 3].indexOf(4), -1); // true
 //     });
 //   });
 // });
