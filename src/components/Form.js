@@ -16,7 +16,7 @@ export default class Form {
     let html = ` <form id="form">
       <div>
         <p></p>
-        <input type="text" name="email" id="in_email" required placeholder="Your e-mail address" autocomplete="off">
+        <input type="text" name="email" id="in_email" placeholder="Your e-mail address" autocomplete="off">
       </div>
       <button class="animated zoomIn"> Sign up</button>
       <p class="error_text" id="error_text"></p>
@@ -57,11 +57,9 @@ export default class Form {
     this.form.style.display = "none";
     this.holder.classList.add("success");
     setTimeout(() => {
-      // this.holder.classList.remove("success");
-      // this.form.style.display = "flex";
-      // this.button.style.display = "block";
       this.removeError();
     }, 1700);
+    this.input_field.focus();
   }
   removeError() {
     this.button.style.display = "block";

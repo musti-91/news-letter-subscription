@@ -13,7 +13,7 @@
       "mocha src/test/index.test.js -w --reporters-spec --require babel-register",
     "test:single": "nyc mocha src/test/index.test.js --require babel-register",
     "check-coverage":
-      "nyc check-coverage --lines 90 --functions 90 --branches 90",
+      "nyc check-coverage --lines 90 --functions 90 --branches 40",
     "prebuild": "rimraf build",
     "build":
       "parcel build index.html -d build --no-cache --detailed-report --public-url ./ && firebase deploy",
@@ -49,7 +49,9 @@
     "travis-deploy-once": "^5.0.0"
   },
   "config": {
-    "ghooks": {},
+    "ghooks": {
+      "pre-commit": "npm run test:single && npm run check-coverage"
+    },
     "czConfig": {
       "path": "node_modules/cz-conventional-changelog"
     }
