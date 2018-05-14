@@ -42,7 +42,7 @@ export default class Form {
     this.button.style.display = "none";
     this.input_field.parentElement.style.width = "100%";
     if (this.validate(this.input_field.value)) {
-      if (this.inArray(this.input_field.value, this.emails)) {
+      if (this.emails.includes(this.input_field.value)) {
         this.showError(this.error_text, "email is already exised");
       } else {
         this.email_successed();
@@ -96,5 +96,6 @@ export default class Form {
       this.holder.style.height = "70px";
       this.form.classList.remove("error");
     }
+    this.input_field.focus();
   }
 }
