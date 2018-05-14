@@ -57,12 +57,16 @@ export default class Form {
     this.form.style.display = "none";
     this.holder.classList.add("success");
     setTimeout(() => {
-      this.holder.classList.remove("success");
-      this.form.style.display = "flex";
+      // this.holder.classList.remove("success");
+      // this.form.style.display = "flex";
+      // this.button.style.display = "block";
+      this.removeError();
     }, 1700);
   }
   removeError() {
     this.button.style.display = "block";
+    this.form.style.display = "flex";
+    this.holder.classList.remove("success");
     this.input_field.parentElement.style.width = "75%";
     this.form.classList.remove("error");
     this.holder.style.height = "70px";
