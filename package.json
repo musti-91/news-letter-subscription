@@ -12,12 +12,10 @@
     "test": "mocha -w",
     "test:single": "nyc mocha",
     "check-coverage":
-      "nyc check-coverage --lines 30 --functions 30 --branches 0",
+      "nyc check-coverage --lines 30 --functions 30 --branches 30",
     "prebuild": "rimraf build",
     "build":
       "parcel build index.html -d build --no-cache --detailed-report --public-url ./ && firebase deploy",
-    "report-coverage":
-      "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "commit": "git-cz",
     "travis-deploy-once": "travis-deploy-once",
     "semantic-release": "semantic-release"

@@ -6,7 +6,7 @@ require("jsdom-global")(`<div id="test"></div>`, {});
 describe("Form class", function() {
   const arr = [2, 3, 5, 7, 78, 1, 8, 8, , 1];
   const firebaseRef = "";
-  const test = new Form(document.getElementById("test"), arr, firebaseRef);
+  const test = new Form(document.getElementById("test"));
   describe("Form.validate()", function() {
     it("return true when vlaue is passed", function() {
       assert.equal(test.validate("some@read.be"), true);

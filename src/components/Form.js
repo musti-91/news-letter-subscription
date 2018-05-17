@@ -1,7 +1,7 @@
 import { meraki } from "./meraki";
 
 export default class Form {
-  constructor(holder, retrivedData, firebaseRef) {
+  constructor(holder, retrivedData = retrivedData, firebaseRef = firebaseRef) {
     this.holder = holder;
     this.firebaseRef = firebaseRef;
     this.emails = retrivedData;

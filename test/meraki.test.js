@@ -11,10 +11,10 @@ describe("meraki.api", function() {
       assert.equal(meraki.api.validate.email("some.com"), false);
     });
   });
-  describe("color()", function() {
-    const reg = /rgb\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/;
-    it("should return true when rgb(xxx,xxx,xxx)", function() {
-      assert.equal(reg.test(meraki.api.random.color()), true);
-    });
-  });
+  // describe("color()", function() {
+  //   const reg = /rgb\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/;
+  //   it("should return true when rgb(xxx,xxx,xxx)", function() {
+  //     assert.equal(reg.test(meraki.api.random.color()), true);
+  //   });
+  // });
 });
