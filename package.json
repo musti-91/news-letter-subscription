@@ -9,11 +9,10 @@
     "web":
       "start npm run css && start npm run js && start live-server --watch=./*.html,./build/style.css,./build/main.js",
     "dev": "parcel index.html",
-    "test":
-      "mocha src/test/index.test.js -w --reporters-spec --require babel-register",
-    "test:single": "nyc mocha src/test/index.test.js --require babel-register",
+    "test": "mocha -w",
+    "test:single": "nyc mocha",
     "check-coverage":
-      "nyc check-coverage --lines 90 --functions 90 --branches 40",
+      "nyc check-coverage --lines 30 --functions 30 --branches 0",
     "prebuild": "rimraf build",
     "build":
       "parcel build index.html -d build --no-cache --detailed-report --public-url ./ && firebase deploy",
@@ -34,12 +33,13 @@
     "autoprefixer": "^7.2.5",
     "babel-core": "6.26.3",
     "babel-preset-env": "^1.6.1",
-    "babel-register": "6.26.0",
     "chai": "4.1.2",
     "codecov.io": "0.1.6",
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.1.0",
     "ghooks": "2.0.4",
+    "jsdom": "11.10.0",
+    "jsdom-global": "3.0.2",
     "mocha": "5.1.1",
     "node-sass": "^4.7.2",
     "nyc": "11.7.3",

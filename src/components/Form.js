@@ -22,7 +22,6 @@ export default class Form {
       <p class="error_text" id="error_text"></p>
     </form>
     `;
-    this.holder.innerHTML = "";
     this.holder.insertAdjacentHTML("beforeEnd", html);
     this.input_field = document.getElementById("in_email");
     this.input_field.focus();
